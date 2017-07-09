@@ -432,7 +432,7 @@ table {
   width: 220px;
   height: 45px;
   background: #e04445;
-  font-family: "baskerville", "Times New Roman", serif;
+  font-family: "libre baskerville", "Times New Roman", serif;
   text-transform: uppercase;
   text-align: center;
   font-size: 27px; }
@@ -858,11 +858,14 @@ footer {
   border-top: 1px solid #ddd;
   padding-bottom: 20px;
   min-width: 980px; }
+  footer .social-icons {
+    width: 28px;
+    height: 28px; }
   footer .copyright {
     text-align: center; }
     footer .copyright p, footer .copyright a {
-      font-family: "baskerville", "Times New Roman", serif;
-      font-size: 17px;
+      font-family: "libre baskerville", "Times New Roman", serif;
+      font-size: 14px;
       color: #000;
       margin: 0; }
     footer .copyright a:hover {
@@ -907,7 +910,7 @@ footer {
     text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px; }
   .jumbotron .conf-info {
     font-size: 20px;
-    font-family: "baskerville", "Times New Roman", serif;
+    font-family: "libre baskerville", "Times New Roman", serif;
     margin-top: 55px;
     letter-spacing: 1.2px;
     text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px; }
@@ -921,7 +924,7 @@ footer {
     margin: auto;
     margin-top: 30px;
     font-size: 30px;
-    font-family: "baskerville", "Times New Roman", serif;
+    font-family: "libre baskerville", "Times New Roman", serif;
     text-align: center; }
   .intro-video video {
     height: 300px; }
@@ -956,8 +959,8 @@ aside.sidebar {
 
 .module-title {
   display: block;
-  font-size: 36px;
-  font-family: "baskerville", "Times New Roman", serif;
+  font-size: 32px;
+  font-family: "libre baskerville", "Times New Roman", serif;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
@@ -1041,6 +1044,7 @@ aside.sidebar {
   width: 720px;
   margin: auto;
   margin-top: 50px;
+  padding: 0 130px;
   margin-bottom: 40px; }
   .module-schedule .module-title {
     width: 720px;
@@ -1117,17 +1121,16 @@ aside.sidebar {
     color: white;
     margin-top: 40px;
     display: block;
-    height: 45px;
     background: #e04445;
-    font-family: "baskerville", "Times New Roman", serif;
+    font-family: "libre baskerville", "Times New Roman", serif;
     text-transform: uppercase;
     text-align: center;
-    font-size: 27px; }
+    font-size: 25px; }
 
 .module-venue {
   padding: 20px 0;
   background: #848ba3;
-  font-family: "baskerville", "Times New Roman", serif;
+  font-family: "libre baskerville", "Times New Roman", serif;
   min-width: 980px;
   color: white; }
   .module-venue .module-title {
@@ -1151,11 +1154,11 @@ aside.sidebar {
       text-align: center;
       text-transform: uppercase; }
     .module-venue .venue-info .venue-name {
-      font-size: 24px;
+      font-size: 20px;
       margin: 6px 0 4px 0; }
     .module-venue .venue-info .venue-address {
-      font-size: 18px;
-      line-height: 1.3em; }
+      font-size: 16px;
+      line-height: 1.5em; }
   .module-venue .venue-info .venue-photo {
     width: 100%; }
   .module-venue .conf-info {
@@ -1185,16 +1188,110 @@ aside.sidebar {
       .module-venue .conf-info .venue-date .title,
       .module-venue .conf-info .venue-time .title {
         display: block;
-        font-size: 32px;
+        font-size: 30px;
         line-height: 1.5em;
         letter-spacing: 0.05em;
         text-transform: uppercase; }
       .module-venue .conf-info .venue-date .content,
       .module-venue .conf-info .venue-time .content {
         display: block;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 1.5em;
         letter-spacing: 0.05em; }
+
+.module-about {
+  min-width: 780px;
+  margin: auto;
+  padding: 40px 0;
+  background-color: #101423;
+  color: white; }
+  .module-about .about {
+    width: 780px;
+    margin: auto; }
+  .module-about .module-title {
+    width: 780px;
+    margin: auto;
+    margin-bottom: 20px;
+    color: white; }
+  .module-about .about-description {
+    font-size: 13px; }
+  .module-about .organizer-title {
+    font-family: "libre baskerville", "Times New Roman", serif;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-left: 45px;
+    color: white;
+    font-size: 24px; }
+  .module-about .organizers {
+    display: block;
+    margin-left: 45px;
+    font-size: 13px;
+    line-height: 16px; }
+    .module-about .organizers .name {
+      display: inline;
+      color: #E0E0E0; }
+    .module-about .organizers .indent {
+      display: block;
+      text-indent: 20px; }
+  .module-about .organizer-description {
+    font-size: 13px; }
+    .module-about .organizer-description a {
+      color: white;
+      text-decoration: underline; }
+
+.module-contact {
+  min-width: 780px;
+  margin: auto;
+  padding: 30px 0 40px;
+  background-color: #848ba3;
+  color: white; }
+  .module-contact .module-title {
+    display: block;
+    width: 760px;
+    margin: auto;
+    margin-bottom: 20px;
+    color: white; }
+  .module-contact .contact {
+    width: 760px;
+    margin: auto; }
+  .module-contact form {
+    display: flex;
+    width: 550px;
+    margin: auto;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+    .module-contact form input, .module-contact form textarea, .module-contact form button {
+      box-sizing: border-box;
+      border: 0; }
+    .module-contact form .input-name, .module-contact form .input-email {
+      width: 48%; }
+    .module-contact form input {
+      height: 31px;
+      padding: 5px;
+      margin-bottom: 12px; }
+    .module-contact form .input-subject {
+      width: 100%; }
+    .module-contact form .input-message {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 12px; }
+    .module-contact form .submit-button {
+      width: 100%;
+      height: 45px;
+      padding: 5px;
+      font-size: 17px;
+      background-color: black; }
+  .module-contact .company-address {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    line-height: 20px;
+    margin-top: 45px;
+    letter-spacing: .3px; }
+    .module-contact .company-address a {
+      color: white;
+      text-decoration: underline; }
 
 main.container {
   margin: auto;
