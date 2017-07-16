@@ -436,6 +436,9 @@ table {
   text-transform: uppercase;
   text-align: center;
   font-size: 27px; }
+  .register-button:hover, .register-button:active {
+    background-color: #ff3d3e;
+    color: white; }
 
 .social-icons {
   box-sizing: border-box;
@@ -453,32 +456,17 @@ header {
   height: 45px;
   box-sizing: border-box;
   margin: auto;
-  min-width: 980px; }
-
-.slicknav_menu {
-  display: none;
-  padding: 0;
-  background: transparent;
-  top: 0;
-  right: 0; }
-  .slicknav_menu .slicknav_btn {
-    margin: 0;
-    padding: 17px 15px;
-    background: transparent; }
-  .slicknav_menu .slicknav_nav {
+  min-width: 100%;
+  position: relative;
+  padding: 0 20px; }
+  .header-wrap .logo-link {
+    display: flex;
+    height: 100%;
     position: absolute;
-    top: 40px;
-    right: 0;
-    z-index: 1000;
-    background: #FFA100; }
-    .slicknav_menu .slicknav_nav .nav-list-item {
-      display: block; }
-      .slicknav_menu .slicknav_nav .nav-list-item a {
-        text-align: center; }
-        .slicknav_menu .slicknav_nav .nav-list-item a:hover {
-          border-radius: 0;
-          background: transparent;
-          color: white; }
+    align-items: center;
+    justify-content: center; }
+    .header-wrap .logo-link img {
+      height: 30px; }
 
 ul.nav {
   height: 100%;
@@ -508,6 +496,9 @@ ul.nav-sub {
   clear: both;
   width: 100%;
   background: white; }
+
+.slicknav_menu {
+  display: none; }
 
 .home.post-list .post-list-item {
   border-bottom: 1px solid #ddd; }
@@ -843,7 +834,11 @@ pre {
     color: #4c4c4c;
     font-size: .65em; }
 
+footer {
+  padding-top: 15px !important; }
+
 .paginator {
+  display: none;
   margin: 4em 0;
   text-align: center; }
   .paginator .prev, .paginator .next {
@@ -880,6 +875,7 @@ footer {
   background: #1A344F;
   background-image: url("/images/jumbotron-bg.jpg");
   background-size: 100% auto;
+  background-position-y: -400px;
   height: 350px;
   width: 100%;
   min-width: 980px; }
@@ -918,6 +914,8 @@ footer {
     margin-top: 55px;
     letter-spacing: 1.2px;
     text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px; }
+    .jumbotron .conf-info * {
+      display: inline; }
 
 .intro-video {
   width: 980px;
@@ -927,11 +925,110 @@ footer {
     width: 980px;
     margin: auto;
     margin-top: 30px;
-    font-size: 30px;
+    font-size: 20px;
     font-family: "libre baskerville", "Times New Roman", serif;
     text-align: center; }
-  .intro-video video {
-    height: 300px; }
+
+a {
+  text-decoration: none;
+  color: #1a1a1a; }
+
+.countdown {
+  transform: scale(0.4);
+  width: 720px;
+  margin: 0 auto; }
+  .countdown .bloc-time {
+    float: left;
+    margin-right: 45px;
+    text-align: center; }
+    .countdown .bloc-time:last-child {
+      margin-right: 0; }
+  .countdown .count-title {
+    display: block;
+    margin-bottom: 15px;
+    font: normal 1.3em "Lato";
+    color: white;
+    text-transform: uppercase; }
+  .countdown .figure {
+    position: relative;
+    float: left;
+    height: 110px;
+    width: 100px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), inset 2px 4px 0 0 rgba(255, 255, 255, 0.08); }
+    .countdown .figure:last-child {
+      margin-right: 0; }
+    .countdown .figure > span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      font: normal 5.94em/107px "Lato";
+      font-weight: 700;
+      color: #de4848; }
+    .countdown .figure .top:after, .countdown .figure .bottom-back:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    .countdown .figure .top {
+      z-index: 3;
+      background-color: #f7f7f7;
+      transform-origin: 50% 100%;
+      -webkit-transform-origin: 50% 100%;
+      border-radius-top-left: 10px;
+      border-radius-top-right: 10px;
+      transform: perspective(200px); }
+    .countdown .figure .bottom {
+      z-index: 1; }
+      .countdown .figure .bottom:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: rgba(0, 0, 0, 0.02); }
+    .countdown .figure .bottom-back {
+      z-index: 2;
+      top: 0;
+      height: 50%;
+      overflow: hidden;
+      background-color: #f7f7f7;
+      border-radius-top-left: 10px;
+      border-radius-top-right: 10px; }
+      .countdown .figure .bottom-back span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto; }
+    .countdown .figure .top, .countdown .figure .top-back {
+      height: 50%;
+      overflow: hidden;
+      backface-visibility: hidden; }
+    .countdown .figure .top-back {
+      z-index: 4;
+      bottom: 0;
+      background-color: #fff;
+      -webkit-transform-origin: 50% 0;
+      transform-origin: 50% 0;
+      transform: perspective(200px) rotateX(180deg);
+      border-radius-bottom-left: 10px;
+      border-radius-bottom-right: 10px; }
+      .countdown .figure .top-back span {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        right: 0;
+        margin: auto; }
 
 aside.sidebar {
   margin-left: 40px; }
@@ -1006,7 +1103,7 @@ aside.sidebar {
 
 .module-speakers {
   padding: 20px 0;
-  background-image: url("/images/speakers-bg.webp");
+  background-image: url("/images/speakers-bg.jpg");
   min-width: 980px; }
   .module-speakers .module-title {
     display: block;
@@ -1161,6 +1258,7 @@ aside.sidebar {
       font-size: 20px;
       margin: 6px 0 4px 0; }
     .module-venue .venue-info .venue-address {
+      display: block;
       font-size: 16px;
       line-height: 1.5em; }
   .module-venue .venue-info .venue-photo {
@@ -1219,7 +1317,7 @@ aside.sidebar {
     color: white; }
   .module-about .about-description {
     font-size: 13px; }
-  .module-about .organizer-title {
+  .module-about .heading {
     font-family: "libre baskerville", "Times New Roman", serif;
     margin: auto;
     margin-bottom: 10px;
@@ -1227,16 +1325,14 @@ aside.sidebar {
     color: white;
     font-size: 24px; }
   .module-about .organizers {
-    display: block;
     margin-left: 45px;
     font-size: 13px;
     line-height: 16px; }
     .module-about .organizers .name {
-      display: inline;
       color: #E0E0E0; }
     .module-about .organizers .indent {
       display: block;
-      text-indent: 20px; }
+      margin-left: 20px; }
   .module-about .organizer-description {
     font-size: 13px; }
     .module-about .organizer-description a {
@@ -1264,7 +1360,8 @@ aside.sidebar {
     margin: auto;
     flex-flow: row wrap;
     justify-content: space-between; }
-    .module-contact form input, .module-contact form textarea, .module-contact form button {
+    .module-contact form input, .module-contact form textarea {
+      color: #101423;
       box-sizing: border-box;
       border: 0; }
     .module-contact form .input-name, .module-contact form .input-email {
@@ -1276,244 +1373,179 @@ aside.sidebar {
     .module-contact form .input-subject {
       width: 100%; }
     .module-contact form .input-message {
+      box-sizing: border-box;
       width: 100%;
       padding: 5px;
-      margin-bottom: 12px; }
+      margin-bottom: 12px;
+      background-color: white; }
     .module-contact form .submit-button {
       width: 100%;
       height: 45px;
       padding: 5px;
       font-size: 17px;
-      background-color: black; }
+      background-color: black;
+      color: white; }
   .module-contact .company-address {
     display: block;
     width: 100%;
     text-align: center;
     font-size: 17px;
     line-height: 20px;
-    margin-top: 45px;
-    letter-spacing: .3px; }
+    margin-top: 25px;
+    letter-spacing: .3px;
+    padding-bottom: 10px; }
     .module-contact .company-address a {
       color: white;
       text-decoration: underline; }
 
-main.container {
-  margin: auto;
-  margin-top: 2em; }
-
-header .header-wrap {
-  position: relative;
-  padding: 0 20px; }
-
-header .logo-link {
-  display: flex;
-  height: 100%;
-  position: absolute;
-  align-items: center;
-  justify-content: center; }
-  header .logo-link img {
-    height: 30px; }
-
-.container {
-  margin-top: 5px !important; }
-
-.container-left {
-  width: 60%; }
-
-.sidebar {
-  padding-top: 18px;
-  margin: 0 0 0 1em;
-  width: 40%;
-  max-width: 420px; }
-
-.videos .videos-heading {
-  width: 15%;
-  border-left: #FFA100 5px solid;
-  font-size: 30px;
-  padding-left: 15px;
-  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.6); }
-
-.videos .slider {
-  display: flex;
-  width: 70%;
-  align-items: center;
-  flex-direction: row;
-  height: 330px;
-  justify-content: space-around; }
-  .videos .slider iframe {
-    width: 620px;
-    height: 280px;
-    max-width: 45%; }
-
-.subscribe-wrap {
-  width: 850px;
-  position: relative;
-  display: flex;
-  padding: 10px 0;
-  margin: auto; }
-  .subscribe-wrap .quote {
-    width: 370px;
-    font-size: 24px;
-    padding: 0 20px;
-    border-right: rgba(255, 255, 255, 0.5) 2px solid;
-    margin-right: 20px;
-    line-height: 26px; }
-  .subscribe-wrap form.subscribe-form {
-    padding-right: 20px;
-    width: 50%;
-    height: 40px; }
-    .subscribe-wrap form.subscribe-form input.email {
-      width: 100%;
-      min-width: 150px; }
-
-/*
-@media screen and (max-width: 999px) and (min-width: 701px) {
-    header {
-        .header-wrap {
-            padding: 0 10px;
-        }
-        .logo-link {
-            position: absolute;
-            img {
-                height: 30px;
-                padding: 10px 0;
-            }
-        }
-    }
-
-    .jumbotron {
-        .video-hide {
-            display: none;
-        }
-        .videos-heading {
-            border-left: $c11 5px solid;
-            padding-left: 15px;
-            width: 18%;
-            font-size: 28px;
-        }
-        .slider {
-            width: 70%;
-            align-items: center;
-            flex-direction: row;
-            height: 330px;
-            justify-content: space-around;
-            iframe {
-                width: 620px;
-                height: 280px;
-                max-width: 90%;
-            }
-        }
-    }
-
-    .subscribe-wrap {
-        width: 850px;
-        position: relative;
-        display: flex;
-        padding: 10px 0;
-        margin: auto;
-        .quote {
-            width: 370px;
-            font-size: 24px;
-            padding: 0 20px;
-            border-right: rgba(255,255,255,.5) 2px solid;
-            margin-right: 20px;
-            line-height: 26px;
-        }
-        form.subscribe-form {
-            padding-right: 20px;
-            width: 50%;
-            height: 40px;
-            input.email {
-                width: 100%;
-                min-width: 150px;
-            }
-        }
-    }
-
-    .sidebar {
-        padding-top: 18px;
-        width: 40%;
-        .slideshare {
-            .slideshare-heading {
-                font-size: 22px;
-            }
-            .slideshare-list {
-                font-size: 13px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .videos {
-        flex-direction: column;
-    }
-    .video-hide {
-        display: none;
-    }
-    .videos-heading {
-        width: 80%;
-        text-align: center;
-        font-size: 24px;
-        margin-bottom:0;
-    }
-
-    main.container {
-        margin: 1em 1em;
-    }
-    .header-wrap {
-        position: relative;
-        .logo-link {
-            position: absolute;
-            img {
-                height: 26px;
-                padding: 11px;
-            }
-        }
-        .slicknav_menu {
-            display: block;
-        }
-        ul.nav {
-            display: none;
-
-        }
-    }
-    .sidebar {
-        display: none;
-    }
-    .slider {
-        height: 225px;
-        .slick-arrow {
-            display: none!important;
-        }
-    }
-    .subscribe-wrap {
+@media (max-width: 667px) {
+  .slicknav_menu {
+    position: absolute;
+    display: block;
+    padding: 0;
+    background: transparent;
+    top: 0;
+    right: 0; }
+    .slicknav_menu .slicknav_btn {
+      margin: 0;
+      padding: 15px 15px;
+      background: transparent; }
+    .slicknav_menu .slicknav_nav {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      z-index: 1000;
+      background: #D98900; }
+      .slicknav_menu .slicknav_nav .nav-list-item {
+        display: block; }
+        .slicknav_menu .slicknav_nav .nav-list-item a {
+          text-align: center; }
+          .slicknav_menu .slicknav_nav .nav-list-item a:hover {
+            border-radius: 0;
+            background: transparent;
+            color: white; }
+  header,
+  .jumbotron,
+  .jumbotron-wrap,
+  .intro-video,
+  .video-heading,
+  .intro-video iframe,
+  .container,
+  .module,
+  .module-title,
+  a.module-title,
+  .speakers,
+  .schedule-description,
+  .schedule,
+  .venue,
+  .about,
+  .contact,
+  .contact form,
+  footer,
+  .paginator,
+  .copyright {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important; }
+  .module {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important; }
+    .module .module-title {
+      font-size: 30px !important;
+      margin-top: 30px !important;
+      margin-bottom: 15px !important; }
+  header {
+    border-bottom: solid 2px #FFA100;
+    height: auto; }
+    header .nav {
+      display: none; }
+  .jumbotron {
+    height: 300px; }
+    .jumbotron .jumbotron-wrap {
+      transform: none; }
+    .jumbotron .conf-title {
+      margin-top: 30px;
+      font-size: 26px; }
+      .jumbotron .conf-title .conf-name {
+        font-size: 30px; }
+    .jumbotron .conf-theme {
+      font-size: 18px; }
+    .jumbotron .conf-info {
+      margin-top: 15px;
+      font-size: 13px; }
+      .jumbotron .conf-info span {
         display: block;
-        overflow: hidden;
-        .quote {
-            display: block;
-            text-align: center;
-            box-sizing: border-box;
-            width: 100%;
-            font-size: 20px;
-            line-height: 26px;
-            margin-bottom: 10px;
-            padding: 8px 18px 0;
-        }
-        form.subscribe-form {
-            width: 100%;
-            box-sizing: border-box;
-            font-size: 15px;
-            input.email {
-                height: 40px;
-                &:focus {
-                    background: #ECECEC!important;
-                    &::placeholder {
-                        color: #CCC;
-                    }
-                }
-            }
-        }
-    }
-}
-*/
+        text-align: center; }
+      .jumbotron .conf-info .sep {
+        display: none; }
+    .jumbotron .register-button {
+      font-size: 20px;
+      width: 150px;
+      height: 34px; }
+  .intro-video .video-heading {
+    display: none;
+    margin-top: 10px;
+    font-size: 16px !important; }
+  .intro-video iframe {
+    margin-top: 0px; }
+  .module-topics .topic-card {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px; }
+    .module-topics .topic-card .topic-title {
+      margin-bottom: 3px; }
+  .module-speakers .speakers {
+    justify-content: center; }
+  .module-speakers .speaker-card {
+    width: 60%;
+    height: auto; }
+    .module-speakers .speaker-card .speaker-position, .module-speakers .speaker-card .speaker-company {
+      font-size: 14px; }
+  .module-schedule {
+    box-sizing: border-box;
+    padding: 0 14px !important; }
+  .module-sponsors {
+    padding-bottom: 30px !important; }
+    .module-sponsors .sponsorship-letter {
+      margin-top: 5px; }
+  .module-venue {
+    box-sizing: border-box;
+    padding: 40px !important;
+    padding-top: 2px !important; }
+    .module-venue .venue {
+      flex-direction: column; }
+      .module-venue .venue .venue-info, .module-venue .venue .conf-info {
+        width: 100%;
+        padding: 0; }
+      .module-venue .venue .venue-info {
+        margin-bottom: 15px; }
+      .module-venue .venue .conf-info {
+        flex-flow: row wrap; }
+        .module-venue .venue .conf-info .venue-date, .module-venue .venue .conf-info .venue-time {
+          width: 50% !important;
+          text-align: center;
+          height: auto; }
+          .module-venue .venue .conf-info .venue-date img, .module-venue .venue .conf-info .venue-time img {
+            margin-right: 0;
+            float: none;
+            margin: auto !important;
+            margin-bottom: 10px; }
+          .module-venue .venue .conf-info .venue-date .title, .module-venue .venue .conf-info .venue-time .title {
+            font-size: 24px; }
+          .module-venue .venue .conf-info .venue-date .content, .module-venue .venue .conf-info .venue-time .content {
+            font-size: 16px; }
+        .module-venue .venue .conf-info .register-button {
+          width: 100%; }
+  .module-contact {
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-left: 15px !important;
+    padding-right: 15px !important; }
+    .module-contact form input {
+      width: 100% !important; }
+  .module-about {
+    box-sizing: border-box;
+    padding-left: 15px !important;
+    padding-right: 15px !important; }
+    .module-about .heading, .module-about .organizers {
+      margin-left: 20px; } }
