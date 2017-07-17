@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>Sponsor Us · AI Frontiers Conference</title><meta name="description" content="Sponsor Us - Impact Deep LLC"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/vendor/slick/slick.css"><link rel="stylesheet" href="/vendor/slick/slick-theme.css"><link rel="stylesheet" href="/vendor/slickNav/slicknav.css"><link rel="stylesheet" href="/css/main.css"><link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet"><link rel="search" type="application/opensearchdescription+xml" href="http://aifrontiers2.github.io/atom.xml" title="AI Frontiers Conference"></head><body><div class="wrap"><header><div class="header-wrap"><a class="logo-link" href="/"><img src="/images/logo.png" alt="logo"></a><ul class="nav nav-sub nav-list"><li class="nav-list-item"><a class="nav-list-link" href="#about" target="_self">ABOUT US</a></li><li class="nav-list-item"><a class="nav-list-link" href="#contact" target="_self">CONTACT US</a></li></ul></div><div class="navigation"><ul class="nav nav-main nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/#topics" target="_self">TOPICS</a></li><li class="nav-list-item"><a class="nav-list-link" href="/#speakers" target="_self">SPEAKERS</a></li><li class="nav-list-item"><a class="nav-list-link" href="/#schedule" target="_self">SCHEDULE</a></li><li class="nav-list-item"><a class="nav-list-link" href="#" target="_self">REGISTER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/sponsor-us" target="_self">SPONSOR</a></li><li class="nav-list-item"><a class="nav-list-link" href="/#venue" target="_self">VENUE</a></li></ul></div></header><main class="container"><div class="post"><article class="post-block"><div class="post-info"><!-- != full_date(item.date, 'll')--></div><h1 class="post-title">Sponsor Us</h1><div class="post-content"><p>Dear Corporate Sponsor:</p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>Sponsor Us · AI Frontiers Conference</title><meta name="description" content="Sponsor Us - Impact Deep LLC"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/images/favicon.png"><link rel="stylesheet" href="/vendor/slick/slick.css"><link rel="stylesheet" href="/vendor/slick/slick-theme.css"><link rel="stylesheet" href="/vendor/slickNav/slicknav.css"><link rel="stylesheet" href="/css/main.css"><link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet"><link rel="search" type="application/opensearchdescription+xml" href="http://aifrontiers2.github.io/atom.xml" title="AI Frontiers Conference"></head><body><div class="wrap"><header><div class="header-wrap"><a class="logo-link" href="/"><img src="/images/logo.png" alt="logo"></a><ul class="nav nav-sub nav-list"><li class="nav-list-item"><a class="nav-list-link" href="https://2017.aifrontiers.com/" onclick="trackOutboundLink('https://2017.aifrontiers.com/')" target="_blank">LAST CONFERENCE</a></li><li class="nav-list-item"><a class="nav-list-link" href="#about" target="_self">ABOUT US</a></li><li class="nav-list-item"><a class="nav-list-link" href="#contact" target="_self">CONTACT US</a></li></ul></div><div class="navigation"><ul class="nav nav-main nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/#topics" target="_self">TOPICS</a></li><li class="nav-list-item"></li><li class="nav-list-item"><a class="nav-list-link" href="/#schedule" target="_self">SCHEDULE</a></li><li class="nav-list-item"><a class="nav-list-link" href="#" target="_self">REGISTER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/sponsor-us" target="_self">SPONSOR</a></li><li class="nav-list-item"><a class="nav-list-link" href="/#venue" target="_self">VENUE</a></li></ul></div></header><main class="container"><div class="post"><article class="post-block"><div class="post-info"><!-- != full_date(item.date, 'll')--></div><h1 class="post-title">Sponsor Us</h1><div class="post-content"><p>Dear Corporate Sponsor:</p>
 <p>We cordially invite your company to be a sponsor at our AI Frontiers Conference <a href="http://aifrontiers.com" target="_blank" rel="external">http://aifrontiers.com</a> on November 3-4, 2017 in Santa Clara, CA. This conference features speakers in deep learning and applied AI from from leading companies to share the latest advances in deep learning products. We have sessions on chatbots, natural language processing, robots, AI and Finance, games, AI platforms and so on.</p>
 <p>Our 1,500 attendees are data scientists, data engineers, technical managers and AI startup entrepreneurs. Some of them are in career transition or look for new opportunities. This conference will be an excellent opportunity for your company to reach the large community of deep learning practitioners. It’s also a platform for brand building and recruiting. We look forward to work with your company in this event.</p>
 <p>Our sponsors, depending on support level, have opportunities to set up booths, host lunch table discussion and advertise their jobs. Our goal is creating an environment where sponsors can interact with all attendees and attract the targeted audience. By making our conference the best applied AI conference, we attract the best people to attend. Our conference announcement goes out to close to 1 million people through our media partners, where our sponsor logos will be viewed many times. During the conference, all our attendees will visit the exhibitor’s booths as they are arranged next to the food area.</p>
@@ -45,4 +45,97 @@ ga('send', 'event', 'outbound', 'click', url, {
         label:"",
         appendTo: ".header-wrap"
     });
-})</script></body></html>
+})
+</script><script type="text/javascript">(function ($) {
+  $.fn.countdown = function(options){
+    //global variables
+    var vars = $.extend({}, $.fn.countdown.defaults, options),
+        $counter = $(this),
+        t = {day: 0, hour: 0, minute: 0, sec: 0},
+        // targetDate = new Date(vars.targetDate).getTime(),
+        // secondsLeft;
+        targetDate = new Date('nov 03, 2017').getTime(),
+        secondsLeft;
+
+    //private methods
+    methods = {
+      setup: function () {
+        $.each(t, function(time, value){
+          var currentSection = '<ul id="'+time+'"><li>0</li><li>0</li></ul>';
+          $counter.append(currentSection);
+        });
+        if (vars.labels) {
+          var labelHtml = '<div class="labels"><ul><li>Days</li><li>Hours</li><li>Minutes</li><li>Seconds</li></ul></div>';
+          $counter.append(labelHtml);
+        }
+      },
+
+      updateTime: function(){
+        var currentTime = new Date().getTime(),
+            secondsLeft = (targetDate - currentTime) / 1000,
+            secsIn = {day: 86400, hour: 3600, minute: 60};
+        if (secondsLeft < 0) {secondsLeft = 0;}
+        $.each(t, function(timePeriod, value){
+          t[timePeriod] = parseInt( (secondsLeft / secsIn[timePeriod]), 10);
+          if (timePeriod !== 'sec'){
+           secondsLeft = secondsLeft % secsIn[timePeriod];
+          }
+          else {
+            t[timePeriod] = secondsLeft;
+          }
+        });
+      },
+
+      updateCounter: function() {
+        $.each(t, function(period, value){
+          var section = $counter.find('#'+period).children();
+          digit = splitDigits(value);
+          section.eq(0).html(digit[0]);
+          section.eq(1).html(digit[1]);
+        });
+
+        function splitDigits(number) {
+          var digits = [];
+          digits[0] = Math.floor(number / 10);
+          digits[1] = Math.floor(number % 10);
+          return digits;
+        }
+      },
+
+      tick: function () {
+        if (secondsLeft < 1) {}
+        else {
+          methods.updateTime();
+          methods.updateCounter();
+          setTimeout(function() {methods.tick();}, 1000);
+        }
+      },
+
+      init: function () {
+        methods.setup();
+        methods.updateTime();
+        methods.updateCounter();
+        methods.tick();
+      },
+    };
+
+    //initiate countdown
+    methods.init();
+  };
+
+  $.fn.countdown.defaults = {
+    targetDate: 'nov 03 2017',
+    labels: true
+  };
+}(jQuery));
+// end of countdown plugin
+
+// dom ready events (would usually be in separate js file)
+$(document).ready(function() {
+
+  // arbitrarially make a new date
+  var newDate = new Date();
+  newDate.setDate(45);
+  $('.counter').countdown({targetDate: newDate});
+
+});</script></body></html>
