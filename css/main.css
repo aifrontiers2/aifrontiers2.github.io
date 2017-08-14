@@ -567,6 +567,10 @@ table {
     padding: 5px;
     vertical-align: text-top; }
 
+.container {
+  border-top: #EEE 1px solid;
+  border-bottom: #EEE 1px solid; }
+
 .social-bar {
   display: flex;
   justify-content: space-between;
@@ -591,18 +595,31 @@ table {
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
-  text-transform: uppercase; }
+  text-transform: capitalize; }
 
-@media (max-width: 900px) and (min-width: 600px) {
-  header .social-bar {
-    display: none; } }
+.jquery-modal.blocker {
+  z-index: 999999;
+  background-color: rgba(0, 0, 0, 0.85); }
+
+#fg-player iframe {
+  margin: 0 !important;
+  height: 500px !important; }
+
+iframe {
+  margin: 0 !important; }
+
+.modal {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  height: 500px !important;
+  max-width: 880px; }
 
 header {
-  min-width: 860px;
   height: 48px;
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px; }
+  margin-top: 20px;
+  margin-bottom: 20px; }
 
 .header-wrap {
   box-sizing: border-box;
@@ -618,19 +635,21 @@ header {
   .header-wrap .header-right {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-end; }
+    align-items: center; }
   .header-wrap .logo-group {
     display: flex;
     flex-direction: row;
     align-items: center; }
-  .header-wrap .logo-link img {
-    width: 160px; }
+  .header-wrap .logo-link {
+    width: 110px; }
+    .header-wrap .logo-link img {
+      width: 160px; }
   .header-wrap .conf-date {
+    display: none;
     font-size: 14px;
     color: #494A5E;
     width: 150px;
-    padding-top: 10px;
+    padding-top: 9px;
     padding-left: 17px; }
 
 .navigation {
@@ -643,7 +662,8 @@ header {
     box-sizing: border-box;
     margin: 0; }
     .navigation ul.nav li {
-      display: inline-block; }
+      display: inline-block;
+      text-transform: capitalize; }
     .navigation ul.nav a.nav-list-link {
       font-size: 13px;
       color: #494A5E;
@@ -666,7 +686,90 @@ header {
   height: 20px;
   background: #0070E8;
   padding: 9px 18px 11px;
-  margin-left: 10px; }
+  margin-left: 10px;
+  letter-spacing: .7px; }
+
+@media (max-width: 900px) and (min-width: 600px) {
+  header .social-bar {
+    display: none; } }
+
+@media (max-width: 820px) and (min-width: 600px) {
+  header .nav-list-link {
+    padding: 8px !important; } }
+
+@media (max-width: 820px) {
+  header {
+    margin: 0 !important; }
+    header .navigation {
+      display: none !important; }
+    header .slicknav_menu {
+      display: block !important; }
+    header .buy-tickets {
+      display: none; }
+    header .social-bar {
+      display: none; }
+    header .conf-date {
+      display: block !important; }
+  .slicknav_menu {
+    z-index: 99999;
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    background: transparent; }
+    .slicknav_menu .slicknav_btn {
+      position: absolute;
+      right: 20px;
+      background: #FFF;
+      margin: 0;
+      border: solid 1px #BFBFBF;
+      border-radius: 2; }
+      .slicknav_menu .slicknav_btn.slicknav_open {
+        border: solid 1px #BFBFBF;
+        border-color: #0070E8;
+        background-color: #0070E8; }
+        .slicknav_menu .slicknav_btn.slicknav_open .slicknav_icon-bar {
+          background-color: #FFF; }
+      .slicknav_menu .slicknav_btn .slicknav_icon-bar {
+        background-color: #AAA; }
+    .slicknav_menu .slicknav_nav {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 40px;
+      padding: 60px 0;
+      background-color: #0070E8; }
+      .slicknav_menu .slicknav_nav .nav-list-item {
+        padding: 4px; }
+        .slicknav_menu .slicknav_nav .nav-list-item .nav-list-link {
+          background-color: #0070E8;
+          border-radius: 0;
+          font-family: "Helvetica Neue", "Arial", sans-serif;
+          text-align: center;
+          font-weight: bold;
+          letter-spacing: .5px;
+          font-size: 15px; }
+          .slicknav_menu .slicknav_nav .nav-list-item .nav-list-link:hover {
+            color: #FFF; }
+      .slicknav_menu .slicknav_nav .sub-items {
+        margin-top: 20px !important; }
+      .slicknav_menu .slicknav_nav .sub-nav-list-item a {
+        color: #5BA8F8; }
+        .slicknav_menu .slicknav_nav .sub-nav-list-item a:hover {
+          color: #FFF; }
+  .header-wrap {
+    flex-direction: row;
+    align-items: center; }
+    .header-wrap .logo-link {
+      line-height: 1 !important; }
+      .header-wrap .logo-link img {
+        padding: 5px 0;
+        transform: scale(0.85);
+        transform-origin: left center; }
+    .header-wrap .conf-date {
+      text-align: right; } }
 
 .home.post-list .post-list-item {
   border-bottom: 1px solid #ddd; }
@@ -1023,35 +1126,42 @@ footer {
     footer .copyright a:hover {
       color: #888; }
 
+@media (max-width: 1250px) {
+  .bg-video {
+    margin-left: calc(50vw - 625px); } }
+
 .jumbotron {
+  background-image: url(/images/jumbotron-bg.jpg);
+  background-size: cover;
+  background-position: center 28%;
+  display: flex;
   position: relative;
   box-sizing: border-box;
   width: 100%;
   background-color: #000;
-  background-size: 100% auto;
-  background-position-y: bottom;
-  background-position-x: center;
-  height: 610px; }
+  height: 520px;
+  overflow: hidden; }
   .jumbotron .bg-video {
+    background-size: cover;
+    background-position: center 20%;
+    margin-top: -50px !important;
     z-index: 4;
     position: absolute;
     display: block;
     width: 100%;
-    height: 100%;
+    min-width: 1250px;
+    height: 130%;
     top: 0;
-    opacity: .5;
-    overflow: hidden;
-    pointer-events: none;
-    transition: all .218s; }
+    left: 0;
+    overflow: hidden; }
     .jumbotron .bg-video iframe {
+      opacity: .5;
       position: absolute;
       z-index: 5;
-      top: -100px;
       margin: 0;
       width: 100%;
-      height: 133%;
-      transform: scale(1.2);
-      transform-origin: center center; }
+      height: 100%;
+      pointer-events: none; }
     .jumbotron .bg-video #toggle {
       z-index: 6;
       position: absolute;
@@ -1070,33 +1180,46 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform-origin: top center; }
+    transform-origin: top center;
+    align-self: center; }
   .jumbotron .conf-logo {
     margin: auto;
-    margin-top: 90px;
-    height: 67px; }
+    margin-top: 100px;
+    height: 50px;
+    display: none; }
   .jumbotron .conf-title {
     font-family: "Avenir Next", "Helvetica Neue", "Arial", sans-serif;
     text-align: center;
-    font-size: 20px;
-    color: white; }
+    color: white;
+    font-weight: 600;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+    transform: scale(1.2); }
     .jumbotron .conf-title .conf-name {
-      color: #F79405;
-      font-size: 55px; }
+      font-size: 50px;
+      line-height: 34px;
+      letter-spacing: -1px;
+      text-transform: uppercase; }
+    .jumbotron .conf-title .conf-nd {
+      font-size: 35px;
+      display: block;
+      font-weight: 600;
+      text-transform: uppercase; }
   .jumbotron .conf-theme {
     font-family: "Avenir Next", "Helvetica Neue", "Arial", sans-serif;
     color: white;
-    font-size: 58px;
-    line-height: 58px;
-    font-weight: 500;
+    font-size: 27px;
+    font-weight: 600;
     margin-top: 35px;
     width: 700px;
-    text-align: center; }
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.3) 0px 4px 3px; }
   .jumbotron .conf-info {
     font-family: "Avenir Next", "Helvetica Neue", "Arial", sans-serif;
     font-size: 18px;
+    text-align: center;
     font-weight: 400;
-    color: white; }
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 3px; }
     .jumbotron .conf-info * {
       display: inline; }
   .jumbotron .buttons {
@@ -1120,6 +1243,8 @@ footer {
       letter-spacing: .6px;
       color: #0070E8;
       cursor: pointer; }
+      .jumbotron .buttons .video-button.mobile {
+        display: none; }
 
 .intro-video {
   width: 1250px;
@@ -1132,6 +1257,25 @@ footer {
     margin-top: 25px;
     font-size: 20px;
     text-align: center; }
+
+#bgPlayer {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000; }
+
+a.close-modal {
+  font-family: "Avenir Next", "Helvetica Neue", "Arial", sans-serif;
+  background: url(/images/close-button.png) no-repeat 0 0 !important;
+  background-size: 100% 100% !important;
+  transform: scale(1.5);
+  left: -12.5px !important;
+  top: -12.5px !important;
+  color: white;
+  line-height: 32px;
+  font-size: 20px;
+  font-weight: 600; }
 
 .countdown .font-size {
   font-weight: 800; }
@@ -1226,17 +1370,18 @@ footer {
     margin-right: 30px; }
     .module-topics .topic-card .topic-image-wrapper {
       position: relative;
-      height: 195px; }
+      width: 290px;
+      height: 193px; }
       .module-topics .topic-card .topic-image-wrapper .topic-image, .module-topics .topic-card .topic-image-wrapper .topic-image-mask {
         position: absolute;
         width: 100%;
-        height: 195px; }
+        height: 100%; }
       .module-topics .topic-card .topic-image-wrapper .topic-image {
         top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
         position: absolute;
-        width: 290px;
-        height: 193px;
         border-radius: 5px; }
       .module-topics .topic-card .topic-image-wrapper .topic-image-mask {
         bottom: 0;
@@ -1261,7 +1406,7 @@ footer {
       font-size: 15px;
       line-height: 18px;
       font-weight: 400;
-      color: #083365;
+      color: #222;
       text-align: center;
       margin-top: 15px; }
 
@@ -1269,13 +1414,13 @@ footer {
   box-sizing: border-box;
   background-color: #015EC3;
   width: 100%;
-  padding: 70px 0; }
+  padding: 25px 0; }
   .module-speakers .module-title {
     display: block;
     color: white;
     width: 100%;
     margin: auto;
-    margin-bottom: 75px; }
+    margin-bottom: 25px; }
   .module-speakers .speakers {
     display: flex;
     box-sizing: border-box;
@@ -1283,18 +1428,19 @@ footer {
     position: relative;
     flex-flow: row wrap;
     padding: 0;
-    justify-content: center; }
+    justify-content: center;
+    max-width: 1250px; }
   .module-speakers .speaker-card {
     display: flex;
     box-sizing: border-box;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     position: relative;
-    width: 186px;
+    width: 210px;
     flex-direction: column;
     justify-content: start; }
   .module-speakers .speaker-card .speaker-photo {
-    width: 140px;
-    height: 140px;
+    width: 178px;
+    height: 178px;
     border-radius: 1000px;
     margin: auto;
     margin-bottom: 16px; }
@@ -1308,11 +1454,17 @@ footer {
     color: white;
     text-align: center;
     white-space: nowrap; }
+  .module-speakers .speaker-card:last-of-type {
+    width: 100%;
+    transform-origin: center center;
+    transform: scale(0.75); }
+    .module-speakers .speaker-card:last-of-type .speaker-photo {
+      margin: auto; }
 
 .module-schedule {
   margin: auto;
   margin-top: 50px;
-  padding: 0 30px;
+  padding: 0 10%;
   margin-bottom: 10px;
   max-width: 1250px;
   box-sizing: border-box; }
@@ -1327,25 +1479,20 @@ footer {
     justify-content: space-between;
     color: #454545; }
   .module-schedule .schedule-description {
-    font-size: 24px;
+    font-size: 18px;
     color: #083365;
     letter-spacing: 0;
     line-height: 32px;
     text-align: center;
     margin: auto;
-    margin-bottom: 32px; }
-  .module-schedule .schedule-subdescription {
-    font-size: 16px;
-    color: #083365;
-    text-align: center;
-    margin: auto; }
+    margin-bottom: 0; }
   .module-schedule .day-buttons {
     width: 155px;
     height: 25px; }
   .module-schedule .heading-box {
     display: block;
     box-sizing: border-box;
-    padding: 20px 46px 22px;
+    padding: 20px 28px 22px;
     margin: auto;
     width: 100%;
     font-size: 22px;
@@ -1355,36 +1502,52 @@ footer {
     background: #0070E8;
     height: 72px;
     font-weight: 600;
-    letter-spacing: .5px; }
+    letter-spacing: .5px;
+    align-content: baseline; }
     .module-schedule .heading-box a {
       color: white; }
     .module-schedule .heading-box .day-heading {
       float: left; }
     .module-schedule .heading-box .day-date {
-      float: right; }
+      float: right;
+      font-size: 18px; }
   .module-schedule .section {
     display: flex;
+    width: 100%;
     flex-direction: row;
     border: solid 1px #E2E2E2;
     border-top: 0;
-    padding: 38px 46px; }
+    padding: 19px 28px; }
     .module-schedule .section.dim {
       background: #FAFAFA; }
-      .module-schedule .section.dim .section-title {
-        color: #083365; }
-    .module-schedule .section .section-title {
+      .module-schedule .section.dim * {
+        color: #083365 !important; }
+    .module-schedule .section .section-time-mobile, .module-schedule .section .section-time {
       display: block;
-      min-width: 200px;
-      max-width: 200px;
-      box-sizing: border-box;
+      min-width: 70px;
+      max-width: 70px;
       font-weight: 600;
       margin-bottom: 5px;
-      padding-right: 45px;
-      font-size: 20px;
+      padding-right: 15px;
+      font-size: 16px;
+      color: #0070E8;
+      letter-spacing: 0;
+      line-height: 27px; }
+    .module-schedule .section .section-time-mobile {
+      display: none; }
+    .module-schedule .section .section-title {
+      display: block;
+      min-width: 115px;
+      max-width: 115px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      padding-right: 25px;
+      font-size: 16px;
       color: #0070E8;
       letter-spacing: 0;
       line-height: 27px; }
     .module-schedule .section .section-description {
+      width: 100%;
       font-size: 15px;
       color: #083365;
       letter-spacing: 0;
@@ -1420,7 +1583,6 @@ footer {
     margin: auto;
     color: white;
     display: block;
-    text-transform: uppercase;
     text-align: center;
     background-color: white;
     letter-spacing: .6px;
@@ -1440,20 +1602,24 @@ footer {
     flex-direction: row;
     color: white;
     margin: auto; }
+  .module-venue .map-wrapper {
+    width: 80%; }
   .module-venue iframe {
-    width: 80%;
-    margin: 0; }
+    width: 100%;
+    margin: 0;
+    height: 300px; }
   .module-venue .venue {
-    min-width: 540px;
-    max-width: 540px;
+    min-width: 500px;
     box-sizing: border-box;
-    padding: 45px 55px;
+    padding: 45px 25px;
     display: flex;
     position: relative;
     flex-direction: row;
     background: url(/images/santa-clara-convention-center.jpg);
     background-size: cover;
     background-position: left center; }
+    .module-venue .venue .venue-mask {
+      display: none; }
     .module-venue .venue .conf-info {
       width: 220px;
       font-family: "Avenir Next", "Helvetica Neue", "Arial", sans-serif;
@@ -1476,6 +1642,7 @@ footer {
         display: block; }
     .module-venue .venue .register-button {
       position: absolute;
+      left: 30px;
       background: #0070E8;
       border-radius: 4px;
       box-sizing: border-box;
@@ -1487,7 +1654,7 @@ footer {
 .module-about {
   margin: auto;
   padding: 40px 0;
-  max-width: 1250px; }
+  max-width: 1000px; }
   .module-about .about {
     margin: auto; }
   .module-about .module-title {
@@ -1509,7 +1676,7 @@ footer {
     letter-spacing: 0;
     font-weight: 600; }
   .module-about .wrapper {
-    width: 80%;
+    width: 70%;
     margin: auto; }
   .module-about .organizers {
     color: #083365;
@@ -1531,7 +1698,7 @@ footer {
 
 .module-contact {
   margin: auto;
-  padding: 30px 0 40px;
+  padding: 30px 0 10px;
   background-color: #015EC3;
   color: white; }
   .module-contact .module-title {
@@ -1572,13 +1739,14 @@ footer {
       padding: 5px;
       font-size: 14px;
       background-color: #083365;
-      text-transform: uppercase;
-      color: white; }
+      color: white;
+      font-weight: 600; }
   .module-contact .company-address {
     display: block;
     width: 100%;
     text-align: center;
     margin-top: 25px;
+    margin-bottom: 30px;
     letter-spacing: .7px;
     padding-bottom: 10px;
     font-size: 14px;
@@ -1615,6 +1783,8 @@ footer {
     width: 100% !important;
     min-width: 0 !important;
     padding: 0 !important; }
+  header {
+    padding: 9px 0 !important; }
   .module {
     padding-top: 5px !important;
     padding-bottom: 5px !important; }
@@ -1622,80 +1792,120 @@ footer {
       font-size: 30px !important;
       margin-top: 30px !important;
       margin-bottom: 15px !important; }
-  header {
-    height: auto;
-    margin: 10px 0; }
-    header .header-wrap {
-      flex-direction: column; }
-    header .navigation ul.nav {
-      float: none;
-      text-align: center; }
-      header .navigation ul.nav li a.nav-list-link {
-        font-size: 10px; }
-    header .buy-tickets {
-      display: none; }
-    header .social-bar {
-      display: none; }
   .jumbotron {
-    height: 600px;
-    background-size: auto 140%;
-    background-position-y: bottom; }
+    height: 500px;
+    overflow: hidden; }
     .jumbotron .jumbotron-wrap {
       transform: none; }
     .jumbotron .conf-logo {
       display: none; }
     .jumbotron .conf-title {
-      display: none;
-      font-size: 26px; }
+      transform: scale(1); }
+      .jumbotron .conf-title .conf-name {
+        font-size: 46px;
+        display: block; }
+      .jumbotron .conf-title .conf-nd {
+        font-size: 38px;
+        display: block;
+        font-weight: 600;
+        margin-top: 4px; }
     .jumbotron .conf-theme {
+      font-weight: 600;
       width: 100%;
-      margin-top: 80px;
-      font-size: 45px; }
+      margin-top: 50px;
+      font-size: 27px;
+      line-height: 31px; }
     .jumbotron .conf-info {
-      margin-top: 15px;
-      font-size: 22px;
-      text-align: center; }
+      margin-top: 20px;
+      font-size: 17px;
+      font-weight: 500; }
       .jumbotron .conf-info span {
         display: inline; }
         .jumbotron .conf-info span:first-child:after {
           content: ", "; }
+      .jumbotron .conf-info .conf-date {
+        display: block !important; }
       .jumbotron .conf-info .sep {
         display: none; }
     .jumbotron .buttons {
-      flex-direction: column;
-      width: auto;
-      height: 100px;
-      justify-content: space-between; }
-    .jumbotron .bg-video iframe {
-      transform: scale(2.8);
-      transform-origin: center center; }
+      display: flex;
+      width: 80%; }
+      .jumbotron .buttons .button {
+        font-size: 14px;
+        width: 49%;
+        letter-spacing: 0; }
+    .jumbotron .bg-video {
+      margin-top: 0 !important;
+      background-position-y: top;
+      background-size: auto 115%;
+      margin-left: 0;
+      left: 0;
+      background-position-x: -50% !important;
+      margin-top: 0 !important;
+      width: 100%;
+      overflow: hidden;
+      height: 100% !important; }
+    .jumbotron #bgPlayer {
+      display: none; }
+  .module-topics .module-title {
+    margin: 10px 0 0 !important; }
   .module-topics .topics {
-    padding: 60px 0;
+    padding: 10px 0;
     padding-bottom: 0;
     margin-bottom: 10px; }
   .module-topics .topic-card {
+    width: 320px;
+    height: auto;
     margin: auto;
-    margin-bottom: 10px; }
+    margin-bottom: 20px; }
+    .module-topics .topic-card .topic-image-wrapper {
+      width: 320px;
+      height: 213px; }
     .module-topics .topic-card .topic-title {
       margin-bottom: 3px; }
+    .module-topics .topic-card .topic-description {
+      margin-top: 8px;
+      text-align: left;
+      color: #000; }
+  .module-speakers .module-title {
+    margin: 10px 0 0 !important; }
   .module-speakers .speakers {
     justify-content: center; }
   .module-speakers .speaker-card {
-    width: 34%;
-    min-width: 140px;
-    margin: 20px 10px;
-    height: auto; }
-    .module-speakers .speaker-card .speaker-position, .module-speakers .speaker-card .speaker-company {
-      font-size: 14px; }
+    margin: 20px 10px 15px;
+    height: auto;
+    width: 255px; }
+    .module-speakers .speaker-card .speaker-photo {
+      width: 255px;
+      height: 255px;
+      margin-bottom: 5px; }
+    .module-speakers .speaker-card .speaker-name,
+    .module-speakers .speaker-card .speaker-position,
+    .module-speakers .speaker-card .speaker-company {
+      font-size: 18px !important;
+      line-height: 22px !important; }
   .module-schedule {
+    margin-top: 20px;
     box-sizing: border-box; }
+    .module-schedule .module-title {
+      margin: 10px 0 0 !important; }
+    .module-schedule .section-time {
+      margin-bottom: 0 !important;
+      display: none !important; }
     .module-schedule .section-title {
       box-sizing: border-box;
       font-size: 20px;
       padding: 0 20px !important; }
+      .module-schedule .section-title br {
+        display: none; }
+      .module-schedule .section-title .section-time-mobile {
+        display: inline;
+        font-size: 18px;
+        padding-right: 15px; }
     .module-schedule .schedule-description {
       box-sizing: border-box;
-      padding: 0 20px !important; }
+      padding: 0 20px !important;
+      margin-bottom: 8px; }
     .module-schedule .schedule-subdescription {
       box-sizing: border-box;
       opacity: .55;
@@ -1706,32 +1916,66 @@ footer {
       .module-schedule .section .section-title {
         width: 100%;
         padding: 0 !important;
-        margin-bottom: 10px; }
+        margin-bottom: 10px;
+        max-width: none;
+        min-width: none;
+        font-size: 18px;
+        letter-spacing: -.3px; }
+      .module-schedule .section .section-description {
+        font-size: 14px; }
   .module-sponsors {
     padding-top: 0 !important;
     padding-bottom: 30px !important; }
     .module-sponsors .sponsorship-letter {
       margin-top: 5px; }
   .module-venue {
+    position: relative;
     padding-top: 0 !important;
-    padding-bottom: 0 !important; }
+    padding-bottom: 0 !important;
+    background-size: cover;
+    background-position: left center; }
     .module-venue .wrapper {
       flex-direction: column; }
-    .module-venue iframe {
+    .module-venue .map-wrapper {
+      background-image: url("/images/map.png");
+      background-position: right center;
+      background-size: auto 100%;
+      height: 300px;
       width: 100%; }
+      .module-venue .map-wrapper iframe {
+        display: none;
+        width: 100%;
+        height: 300px; }
     .module-venue .venue {
+      position: relative;
       flex-direction: column;
-      height: 450px;
+      height: 336px;
       box-sizing: border-box;
+      width: 100%;
       padding: 50px !important; }
+      .module-venue .venue .venue-info {
+        font-weight: 400 !important; }
+      .module-venue .venue * {
+        position: relative;
+        z-index: 5; }
+    .module-venue .venue-mask {
+      z-index: 4;
+      text-indent: 99999px;
+      display: block !important;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      top: 0;
+      left: 0; }
     .module-venue .register-button {
       width: 300px !important;
       margin: auto; }
   .module-contact {
     flex-direction: column;
     box-sizing: border-box;
-    padding-left: 15px !important;
-    padding-right: 15px !important; }
+    padding-left: 45px !important;
+    padding-right: 45px !important; }
     .module-contact form input {
       width: 100% !important; }
   .module-about {
@@ -1741,4 +1985,27 @@ footer {
     .module-about .about-description {
       text-align: left; }
     .module-about .heading, .module-about .organizers {
-      margin-left: 20px; } }
+      margin-left: 20px; }
+  footer {
+    margin-top: 30px;
+    margin-bottom: 10px; }
+    footer .social-bar {
+      margin-bottom: 5px; }
+  #fg-player iframe {
+    margin: 0 !important;
+    height: 220px !important; }
+  iframe {
+    margin: 0 !important; }
+  .modal {
+    position: fixed;
+    left: 15px;
+    top: 30vh;
+    width: calc(100vw - 30px);
+    height: calc(100vh - 30px);
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0; }
+  .video-button.desktop {
+    display: none !important; }
+  .video-button.mobile {
+    display: block !important; } }
